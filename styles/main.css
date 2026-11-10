@@ -1,0 +1,144 @@
+/* custom property */
+:root {
+	--accent-color: #800000;  /* could also be coded #800 */
+	--gradient-color: #f6bb73;
+}
+
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* default styles */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: calc(90% + .2vw);   /* 90% plus .2 viewport widths (Ex. 6-1, step 16) */
+	line-height: 1.5;
+	width: 80%;
+	max-width: 1024px;
+	margin: auto;
+	border: 2px solid var(--accent-color);
+}
+a:hover, a:focus{
+	font-style: italic;
+	color: var(--accent-color);
+}
+h1, h2, h3, p, ul {
+	padding: .25em 0;              /* changed from .5em (step 16) */
+}
+h1 {
+	font-size: 150%;
+}
+h2 {
+	font-size: 130%;
+	color: var(--accent-color);
+}
+h3 {
+	font-size: 105%;
+}
+ul {
+	margin-left: 2em;
+}
+
+/* the styles for the header */
+header {
+	line-height: 1.2;
+	border-bottom: 2px solid var(--accent-color);
+	background-image: linear-gradient(
+	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
+	& h2 {
+		font-size: 175%;
+		padding: .5em 0 0 0;
+	}
+	& h3 {
+		font-size: 130%;
+		font-style: italic;
+		padding-bottom: 1em;
+	}
+	& img {
+		float: left;
+		margin: .75em 1em;
+		width: 8%;                 /* logo scales between 40px and 80px (step 17) */
+		min-width: 40px;
+		max-width: 80px;
+	}
+}
+
+/* the styles for the main content: 2-column flex layout (steps 9-11) */
+main {
+	display: flex;
+	padding: 0 1em 1em;
+	& blockquote {
+		font-style: italic;
+		padding-left: 1em;
+	}
+	& img {
+		border: 4px double var(--accent-color);
+		border-radius: 10px;
+	}
+}
+
+/* left column: guest speakers */
+aside {
+	flex-basis: 25%;
+	padding: .5em 1em 0 0;
+	& img {
+		display: block;
+		width: 60%;                /* guest speaker images: 40px to 75px (step 17) */
+		min-width: 40px;
+		max-width: 75px;
+		margin-bottom: .5em;
+	}
+}
+
+/* right column: main content */
+section {
+	flex-basis: 75%;
+	padding-top: .5em;
+	& img {
+		float: right;              /* float images to the right (step 14) */
+		width: 45%;                /* featured speaker image: 100px to 250px (step 17) */
+		min-width: 100px;
+		max-width: 250px;
+		margin: 0 0 .5em 1em;
+	}
+}
+
+/* featured speaker article (steps 12-13) */
+.featured {
+	border-top: 2px solid var(--accent-color);
+	border-bottom: 2px solid var(--accent-color);
+	padding: .5em 0;
+	margin-bottom: .5em;
+	overflow: auto;                /* keeps the floated image inside the borders */
+}
+
+/* speaker pages (Exercise 6-2) */
+.speaker {
+	& h1 {
+		color: var(--accent-color);
+	}
+	& h2 {
+		color: black;
+	}
+	& p {
+		padding: .5em 0;           /* overrides the default .25em */
+	}
+}
+
+/* the styles for the footer */
+footer {
+	background-color: var(--accent-color);
+	& p {
+		text-align: center;
+		color: white;
+		padding: 1em 0;
+	}
+}
+
+/* CSS class */
+.large {
+	font-size: 125%;
+}
